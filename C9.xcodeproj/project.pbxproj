@@ -14,6 +14,9 @@
 		6E60783D1D44822000C38158 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E60783B1D44822000C38158 /* LaunchScreen.storyboard */; };
 		6E6078481D44822000C38158 /* C9Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6078471D44822000C38158 /* C9Tests.swift */; };
 		6E6078531D44822000C38158 /* C9UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6078521D44822000C38158 /* C9UITests.swift */; };
+		6EEEE0301D4D054100BBDA1E /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE02F1D4D054100BBDA1E /* PageContentViewController.swift */; };
+		6EEEE0331D4D0F7400BBDA1E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEEE0311D4D0F7400BBDA1E /* icon.png */; };
+		6EEEE0341D4D0F7400BBDA1E /* screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEEE0321D4D0F7400BBDA1E /* screen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		6E60784E1D44822000C38158 /* C9UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C9UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6078521D44822000C38158 /* C9UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C9UITests.swift; sourceTree = "<group>"; };
 		6E6078541D44822000C38158 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EEEE02F1D4D054100BBDA1E /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		6EEEE0311D4D0F7400BBDA1E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = SOURCE_ROOT; };
+		6EEEE0321D4D0F7400BBDA1E /* screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,15 @@
 		6E6078311D44822000C38158 /* C9 */ = {
 			isa = PBXGroup;
 			children = (
+				6EEEE0311D4D0F7400BBDA1E /* icon.png */,
+				6EEEE0321D4D0F7400BBDA1E /* screen.png */,
 				6E6078321D44822000C38158 /* AppDelegate.swift */,
 				6E6078341D44822000C38158 /* ViewController.swift */,
 				6E6078361D44822000C38158 /* Main.storyboard */,
 				6E6078391D44822000C38158 /* Assets.xcassets */,
 				6E60783B1D44822000C38158 /* LaunchScreen.storyboard */,
 				6E60783E1D44822000C38158 /* Info.plist */,
+				6EEEE02F1D4D054100BBDA1E /* PageContentViewController.swift */,
 			);
 			path = C9;
 			sourceTree = "<group>";
@@ -232,6 +241,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EEEE0331D4D0F7400BBDA1E /* icon.png in Resources */,
+				6EEEE0341D4D0F7400BBDA1E /* screen.png in Resources */,
 				6E60783D1D44822000C38158 /* LaunchScreen.storyboard in Resources */,
 				6E60783A1D44822000C38158 /* Assets.xcassets in Resources */,
 				6E6078381D44822000C38158 /* Main.storyboard in Resources */,
@@ -259,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EEEE0301D4D054100BBDA1E /* PageContentViewController.swift in Sources */,
 				6E6078351D44822000C38158 /* ViewController.swift in Sources */,
 				6E6078331D44822000C38158 /* AppDelegate.swift in Sources */,
 			);
@@ -491,6 +503,7 @@
 				6E6078591D44822000C38158 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E60785A1D44822000C38158 /* Build configuration list for PBXNativeTarget "C9Tests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +512,7 @@
 				6E60785C1D44822000C38158 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E60785D1D44822000C38158 /* Build configuration list for PBXNativeTarget "C9UITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +521,7 @@
 				6E60785F1D44822000C38158 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

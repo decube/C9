@@ -8,23 +8,67 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIWebViewDelegate {
-    @IBOutlet var webView: UIWebView!
-
+class ViewController: UIPageViewController, UIPageViewControllerDataSource{
+    var arrPageTitle: NSArray = NSArray()
+    var arrPageUrl: NSArray = NSArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //웹뷰 딜리게이트 추가
-        self.webView.delegate = self
-        //웹뷰 띄우기
-        self.webView.loadRequest(NSURLRequest(URL : NSURL(string: "https://ide.c9.io/guanho/oyanggo")!))
+        
+        arrPageTitle = ["경로,이미지 서버", "앱 서버"];
+        arrPageUrl = ["https://ide.c9.io/guanho/oyanggoserver", "https://ide.c9.io/guanho/oyanggo"];
+        
+        self.dataSource = self
+        
+        self.setViewControllers([getViewControllerAtIndex(0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK:- UIPageViewControllerDataSource Methods
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    {
+        let pageContent: PageContentViewController = viewController as! PageContentViewController
+        
+        var index = pageContent.pageIndex
+        
+        if ((index == 0) || (index == NSNotFound))
+        {
+            return nil
+        }
+        
+        index -= 1;
+        return getViewControllerAtIndex(index)
     }
-
-
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController?
+    {
+        let pageContent: PageContentViewController = viewController as! PageContentViewController
+        
+        var index = pageContent.pageIndex
+        
+        if (index == NSNotFound)
+        {
+            return nil;
+        }
+        
+        index += 1;
+        if (index == arrPageTitle.count)
+        {
+            return nil;
+        }
+        return getViewControllerAtIndex(index)
+    }
+    
+    // MARK:- Other Methods
+    func getViewControllerAtIndex(index: NSInteger) -> PageContentViewController
+    {
+        // Create a new view controller and pass suitable data.
+        let pageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageContentViewController") as! PageContentViewController
+        
+        pageContentViewController.strTitle = "\(arrPageTitle[index])"
+        pageContentViewController.webViewUrl = "\(arrPageUrl[index])"
+        pageContentViewController.pageIndex = index
+        
+        return pageContentViewController
+    }
 }
-
