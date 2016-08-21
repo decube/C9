@@ -16,7 +16,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource{
         super.viewDidLoad()
         
         arrPageTitle = ["경로,이미지 서버", "앱 서버"];
-        arrPageUrl = ["https://ide.c9.io/guanho/oyanggoserver", "https://ide.c9.io/guanho/oyanggo"];
+        arrPageUrl = ["https://ide.c9.io/guanho/clubfulstaticserver", "https://ide.c9.io/guanho/clubfulapiserver"];
         
         self.dataSource = self
         
