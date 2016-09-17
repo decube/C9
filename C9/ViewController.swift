@@ -15,8 +15,13 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        arrPageTitle = ["경로,이미지 서버", "앱 서버"];
-        arrPageUrl = ["https://ide.c9.io/guanho/clubfulstaticserver", "https://ide.c9.io/guanho/clubfulapiserver"];
+        arrPageTitle = ["경로 서버", "앱 서버", "이미지 서버", "웹뷰 서버"];
+        arrPageUrl = [
+            "https://ide.c9.io/guanho/decubestaticserver",
+            "https://ide.c9.io/guanho/clubfulapiserver",
+            "https://ide.c9.io/guanho/decubeimageserver",
+            "https://ide.c9.io/guanho/decubeviewserver"
+        ];
         
         self.dataSource = self
         
