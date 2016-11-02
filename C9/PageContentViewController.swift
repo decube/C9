@@ -23,15 +23,15 @@ class PageContentViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        spin.hidden = false
+        spin.isHidden = false
         spin.startAnimating()
         self.webView.delegate = self
-        self.webView.loadRequest(NSURLRequest(URL : NSURL(string: webViewUrl)!))
+        self.webView.loadRequest(URLRequest(url : URL(string: webViewUrl)!))
         lblTitle.text = strTitle
     }
     
-    func webViewDidFinishLoad(webView: UIWebView) {
-        spin.hidden = true
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        spin.isHidden = true
         spin.stopAnimating()
     }
 }

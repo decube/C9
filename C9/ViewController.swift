@@ -25,12 +25,12 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource{
         
         self.dataSource = self
         
-        self.setViewControllers([getViewControllerAtIndex(0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        self.setViewControllers([getViewControllerAtIndex(0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     }
     
     // MARK:- UIPageViewControllerDataSource Methods
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
         let pageContent: PageContentViewController = viewController as! PageContentViewController
         
@@ -45,7 +45,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource{
         return getViewControllerAtIndex(index)
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
     {
         let pageContent: PageContentViewController = viewController as! PageContentViewController
         
@@ -65,10 +65,10 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource{
     }
     
     // MARK:- Other Methods
-    func getViewControllerAtIndex(index: NSInteger) -> PageContentViewController
+    func getViewControllerAtIndex(_ index: NSInteger) -> PageContentViewController
     {
         // Create a new view controller and pass suitable data.
-        let pageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageContentViewController") as! PageContentViewController
+        let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageContentViewController") as! PageContentViewController
         
         pageContentViewController.strTitle = "\(arrPageTitle[index])"
         pageContentViewController.webViewUrl = "\(arrPageUrl[index])"
